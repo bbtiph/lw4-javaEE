@@ -1,0 +1,31 @@
+<web-app>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>kz.iitu.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <servlet-class>kz.iitu.RegistrationServlet</servlet-class>
+    </servlet>
+
+    <filter>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <filter-class>kz.iitu.RequestLoggingFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>kz.iitu.AuthenticationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <url-pattern>/login</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </filter-mapping>
+
+</web-app>
